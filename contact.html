@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hubungi Saya | Portfolio Anda</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <style>
+      html {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      body {
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        background-color: #0d0c22;
+        background-image: radial-gradient(at 27% 37%, hsla(215, 98%, 61%, 0.15) 0px, transparent 50%), radial-gradient(at 97% 21%, hsla(245, 98%, 61%, 0.15) 0px, transparent 50%),
+          radial-gradient(at 75% 26%, hsla(285, 98%, 61%, 0.15) 0px, transparent 50%);
+      }
+      .gradient-text {
+        background: linear-gradient(90deg, #c7d2fe, #f9a8d4, #818cf8);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .form-input {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: border-color 0.3s, box-shadow 0.3s;
+      }
+      .form-input:focus {
+        outline: none;
+        border-color: rgba(244, 114, 182, 0.5); /* Pink */
+        box-shadow: 0 0 15px rgba(244, 114, 182, 0.2);
+      }
+      .animated {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      }
+      .animated.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .glow-on-hover {
+        position: relative;
+        transition: transform 0.3s ease;
+      }
+      .glow-on-hover:hover {
+        transform: translateY(-4px);
+      }
+      .glow-on-hover::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        padding: 1px;
+        background: linear-gradient(45deg, #a5b4fc, #f472b6);
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+      .glow-on-hover:hover::before {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body class="text-gray-200">
+    <div class="min-h-screen w-full flex items-center justify-center p-6">
+      <main class="w-full max-w-6xl">
+        <div class="text-center mb-16 animated is-visible">
+          <h1 class="text-4xl md:text-5xl font-bold gradient-text">Mari Terhubung</h1>
+          <p class="mt-4 text-gray-400 max-w-2xl mx-auto">Saya selalu antusias untuk mendiskusikan proyek baru, ide kreatif, atau peluang untuk menjadi bagian dari visi Anda.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12">
+          <form action="https://formspree.io/f/xzzjpbrz" method="POST" class="space-y-6 animated is-visible" style="transition-delay: 200ms">
+            <div>
+              <label for="name" class="text-sm font-medium text-gray-400">Nama Lengkap</label>
+              <input type="text" name="name" id="name" required class="form-input w-full mt-2 px-4 py-3 rounded-lg text-white placeholder-gray-500" />
+            </div>
+            <div>
+              <label for="email" class="text-sm font-medium text-gray-400">Alamat Email</label>
+              <input type="email" name="email" id="email" required class="form-input w-full mt-2 px-4 py-3 rounded-lg text-white placeholder-gray-500" />
+            </div>
+            <div>
+              <label for="message" class="text-sm font-medium text-gray-400">Pesan Anda</label>
+              <textarea name="message" id="message" rows="5" required class="form-input w-full mt-2 px-4 py-3 rounded-lg text-white resize-none placeholder-gray-500"></textarea>
+            </div>
+            <div>
+              <button type="submit" class="w-full font-semibold text-white py-3 px-8 rounded-md bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 hover:opacity-90 transition-opacity">Kirim Pesan</button>
+            </div>
+          </form>
+
+          <div class="space-y-8 animated is-visible" style="transition-delay: 400ms">
+            <div class="glass-card p-6 rounded-lg glow-on-hover">
+              <h3 class="font-bold text-white text-xl mb-4">Info Kontak</h3>
+              <div class="space-y-4">
+                <div class="flex items-center gap-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="text-pink-400 flex-shrink-0" viewBox="0 0 16 16">
+                    <path
+                      d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"
+                    />
+                  </svg>
+                  <a href="mailto:emailanda@example.com" class="text-gray-300 hover:text-white transition-colors">richardsantana074@gmail.com</a>
+                </div>
+                <div class="flex items-center gap-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="text-pink-400 flex-shrink-0" viewBox="0 0 16 16">
+                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
+                  </svg>
+                  <p class="text-gray-300">Kuta Selatan, Bali, Indonesia</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const animatedElements = document.querySelectorAll('.animated');
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              // Cek isIntersecting untuk animasi looping
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+              } else {
+                // Hapus kelas jika elemen keluar layar agar bisa beranimasi lagi
+                entry.target.classList.remove('is-visible');
+              }
+            });
+          },
+          {
+            threshold: 0.1,
+          }
+        );
+        animatedElements.forEach((el) => {
+          observer.observe(el);
+        });
+      });
+    </script>
+  </body>
+</html>
